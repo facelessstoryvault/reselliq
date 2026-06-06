@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ResellIQ — Post Template</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700;800;900&family=Barlow:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: 'Barlow Condensed', sans-serif;
+  }
+
+  /* The actual 1080x1080 card */
+  .card {
+    width: 1080px;
+    height: 1080px;
+    background: #0A0A0A;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  /* Corner accent lines */
+  .corner {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+  }
+  .corner-tl { top: 48px; left: 48px; border-top: 2px solid #00AAFF; border-left: 2px solid #00AAFF; }
+  .corner-tr { top: 48px; right: 48px; border-top: 2px solid #00AAFF; border-right: 2px solid #00AAFF; }
+  .corner-bl { bottom: 48px; left: 48px; border-bottom: 2px solid #00AAFF; border-left: 2px solid #00AAFF; }
+  .corner-br { bottom: 48px; right: 48px; border-bottom: 2px solid #00AAFF; border-right: 2px solid #00AAFF; }
+
+  /* Subtle grid lines */
+  .grid-line-h {
+    position: absolute;
+    left: 0; right: 0;
+    height: 1px;
+    background: rgba(255,255,255,0.04);
+  }
+  .grid-line-v {
+    position: absolute;
+    top: 0; bottom: 0;
+    width: 1px;
+    background: rgba(255,255,255,0.04);
+  }
+
+  /* Glow orb behind logo */
+  .glow {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,170,255,0.07) 0%, transparent 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .glow-gold {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,184,0,0.05) 0%, transparent 70%);
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  /* Beta badge */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,184,0,0.08);
+    border: 1px solid rgba(255,184,0,0.25);
+    color: #FFB800;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    padding: 10px 24px;
+    border-radius: 3px;
+    margin-bottom: 56px;
+  }
+  .badge-dot {
+    width: 8px;
+    height: 8px;
+    background: #FFB800;
+    border-radius: 50%;
+  }
+
+  /* Main logo */
+  .logo {
+    font-size: 160px;
+    font-weight: 900;
+    letter-spacing: -4px;
+    color: #F0F0F0;
+    line-height: 1;
+    margin-bottom: 32px;
+    text-transform: uppercase;
+  }
+  .logo span { color: #00AAFF; }
+
+  /* Divider */
+  .divider {
+    width: 120px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #00AAFF, transparent);
+    margin-bottom: 40px;
+  }
+
+  /* Tagline */
+  .tagline {
+    font-size: 64px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #F0F0F0;
+    margin-bottom: 56px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .tagline .dot { color: #FFB800; font-size: 48px; }
+
+  /* URL */
+  .url {
+    font-family: 'Barlow', sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+  }
+
+  /* Bottom ticker strip */
+  .ticker-strip {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #00AAFF;
+    padding: 14px 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .ticker-inner {
+    display: inline-flex;
+    gap: 48px;
+    animation: ticker 18s linear infinite;
+  }
+  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .ticker-item {
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #000;
+  }
+  .tick-up { color: #003300; }
+  .tick-down { color: #550000; }
+  .sep { color: rgba(0,0,0,0.3); }
+</style>
+</head>
+<body>
+
+<div class="card">
+
+  <!-- Grid lines -->
+  <div class="grid-line-h" style="top: 25%;"></div>
+  <div class="grid-line-h" style="top: 50%;"></div>
+  <div class="grid-line-h" style="top: 75%;"></div>
+  <div class="grid-line-v" style="left: 25%;"></div>
+  <div class="grid-line-v" style="left: 50%;"></div>
+  <div class="grid-line-v" style="left: 75%;"></div>
+
+  <!-- Glow effects -->
+  <div class="glow"></div>
+  <div class="glow-gold"></div>
+
+  <!-- Corner accents -->
+  <div class="corner corner-tl"></div>
+  <div class="corner corner-tr"></div>
+  <div class="corner corner-bl"></div>
+  <div class="corner corner-br"></div>
+
+  <!-- Content -->
+  <div class="badge"><div class="badge-dot"></div>Now in Beta</div>
+
+  <div class="logo">Resell<span>IQ</span></div>
+
+  <div class="divider"></div>
+
+  <div class="tagline">
+    Track<span class="dot">.</span>
+    Flip<span class="dot">.</span>
+    Win<span class="dot">.</span>
+  </div>
+
+  <div class="url">reselliq.io</div>
+
+  <!-- Bottom ticker -->
+  <div class="ticker-strip">
+    <div class="ticker-inner">
+      <span class="ticker-item">Jordan 4 Bred <span class="tick-up">▲ $380</span> <span class="sep">|</span></span>
+      <span class="ticker-item">Charizard PSA 10 <span class="tick-up">▲ $4,200</span> <span class="sep">|</span></span>
+      <span class="ticker-item">Yeezy 350 Zebra <span class="tick-down">▼ $210</span> <span class="sep">|</span></span>
+      <span class="ticker-item">Luka Doncic RC BGS 9.5 <span class="tick-up">▲ $740</span> <span class="sep">|</span></span>
+      <span class="ticker-item">Travis Scott AJ1 Low <span class="tick-up">▲ $590</span> <span class="sep">|</span></span>
+      <span class="ticker-item">One Piece OP-01 Box <span class="tick-up">▲ $320</span> <span class="sep">|</span></span>
+      <span class="ticker-item">Jordan 4 Bred <span class="tick-up">▲ $380</span> <span class="sep">|</span></span>
+      <span class="ticker-item">Charizard PSA 10 <span class="tick-up">▲ $4,200</span> <span class="sep">|</span></span>
+      <span class="ticker-item">Yeezy 350 Zebra <span class="tick-down">▼ $210</span> <span class="sep">|</span></span>
+      <span class="ticker-item">Luka Doncic RC BGS 9.5 <span class="tick-up">▲ $740</span> <span class="sep">|</span></span>
+      <span class="ticker-item">Travis Scott AJ1 Low <span class="tick-up">▲ $590</span> <span class="sep">|</span></span>
+      <span class="ticker-item">One Piece OP-01 Box <span class="tick-up">▲ $320</span> <span class="sep">|</span></span>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
