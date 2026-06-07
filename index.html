@@ -229,28 +229,14 @@
   <p>Free to use. No credit card required. Start tracking in seconds.</p>
 <a href="https://reselliq-tracker.vercel.app" target="_blank" class="btn-primary" style="display: inline-block; text-decoration: none;">Start Tracking Free</a>
   <div class="email-form">
-    <input type="email" placeholder="your@email.com" id="email-input">
     
-  </div>
-  <p id="signup-msg" style="margin-top: 1rem; color: var(--gold); font-size: 0.9rem; display: none;">You're on the list. 🔥 We'll be in touch.</p>
-</div>
 
 <footer>
   <strong>ResellIQ</strong> · reselliq.io · <a href="mailto:contact@reselliq.io" style="color: var(--muted); text-decoration: none;">contact@reselliq.io</a> · Built for the culture © 2026
 </footer>
 
 <script>
-  function handleSignup() {
-    const input = document.getElementById('email-input');
-    const msg = document.getElementById('signup-msg');
-    if (input.value.includes('@')) {
-      msg.style.display = 'block';
-      input.value = '';
-    } else {
-      input.style.borderColor = '#FF4444';
-      setTimeout(() => input.style.borderColor = '', 1500);
-    }
-  }
+  
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.1 });
